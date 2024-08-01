@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/NoteInputBox.css";
 
 const NoteInputBox = ({ id, handleNewNote }) => {
+  console.log(id)
   const [note, setNote] = useState("");
   const [disableBtn, setDisableBtn] = useState(true);
 
@@ -12,12 +13,13 @@ const NoteInputBox = ({ id, handleNewNote }) => {
   };
 
   const handleSendClick = async () => {
+    // console.log(id)
     if (!id) {
       console.error("Group ID is not defined.");
       return;
     }
-
-    const newNote = {
+    console.log(id)
+    const newNotes = {
       content: note,
       date: new Date().toLocaleDateString(),
       time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
@@ -30,7 +32,7 @@ const NoteInputBox = ({ id, handleNewNote }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(newNote),
+        body: JSON.stringify({newNotes}),
       });
 
       if (!response.ok) {

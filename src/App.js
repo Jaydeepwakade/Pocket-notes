@@ -27,7 +27,7 @@ function App() {
         }
         const data = await response.json();
         setNoteGroups(data); // Set the fetched note groups
-        
+        // console.log("from App",data)
         // Extract and set the ID from the fetched data if necessary
         if (data.length > 0) {
           // Assuming you want the ID of the first note group, adjust as needed
@@ -41,29 +41,29 @@ function App() {
     fetchNoteGroups(); // Fetch data on component mount
   }, []);
 
-  useEffect(() => {
-    const updateNoteGroups = async () => {
-      try {
-        const response = await fetch("http://localhost:5000/note-groups", {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(noteGroups),
-        });
+  // useEffect(() => {
+  //   const updateNoteGroups = async () => {
+  //     try {
+  //       const response = await fetch("http://localhost:5000/note-groups", {
+  //         method: "PUT",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify(noteGroups),
+  //       });
 
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-      } catch (error) {
-        console.error("Error updating note groups:", error);
-      }
-    };
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
+  //     } catch (error) {
+  //       console.error("Error updating note groups:", error);
+  //     }
+  //   };
 
-    if (noteGroups.length > 0) {
-      updateNoteGroups(); // Update note groups whenever they change
-    }
-  }, [noteGroups]);
+  //   if (noteGroups.length > 0) {
+  //     updateNoteGroups(); // Update note groups whenever they change
+  //   }
+  // }, [noteGroups]);
 
   useEffect(() => {
     const handleResize = () => {

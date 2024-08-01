@@ -9,11 +9,12 @@ const Notes = ({
   setDisplay,
   noteActive
 }) => {
+  console.log("This")
   return (
     <>
       {selectedNote && selectedNote.notes ? (
         <NoteBody
-          id={selectedNote.id}
+          id={selectedNote._id}
           name={selectedNote.name}
           color={selectedNote.color}
           notes={selectedNote.notes}

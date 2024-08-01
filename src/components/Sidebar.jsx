@@ -9,35 +9,34 @@ const Sidebar = ({
   isPhone,
   display,
   setDisplay,
-  NoteActive
+  NoteActive,
 }) => {
   const [noteGroups, setNoteGroups] = useState([]);
   const [loading, setLoading] = useState(true); // State to track loading
   const [error, setError] = useState(null); // State to track errors
 
   const fetchNoteGroups = async () => {
-    setLoading(true); // Show loader
+    // setLoading(true); // Show loader
     try {
       const response = await fetch("http://localhost:5000/note-groups");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
       const data = await response.json();
-      console.log("id",data._id)
       setNoteGroups(data);
-      setError(null); // Clear any previous errors
+      setError(null); 
     } catch (error) {
-      setError(error.message); // Set error state
+      setError(error.message); 
       console.error("Error fetching note groups:", error);
     } finally {
-      setLoading(false); // Hide loader
+      setLoading(false); 
     }
   };
 
   useEffect(() => {
-    fetchNoteGroups(); // Fetch data when component mounts
+    fetchNoteGroups();
 
-    const intervalId = setInterval(fetchNoteGroups, 30000); // Poll every 30 seconds
+    const intervalId = setInterval(fetchNoteGroups, 5000); // Poll every 30 seconds
 
     return () => clearInterval(intervalId); // Clean up polling on unmount
   }, [NoteActive]);
@@ -46,6 +45,7 @@ const Sidebar = ({
     if (isPhone) {
       setDisplay(true);
     }
+    console.log(note)
     setSelectedNote(note);
   };
 
@@ -65,6 +65,7 @@ const Sidebar = ({
         ) : noteGroups.length > 0 ? (
           <div className="notesList">
             {noteGroups.map((note, index) => {
+              console.log("IDDDD",note._id)
               const notes = note.name.split(" ");
               const firstLetters = notes.map((word) => word.charAt(0));
               return (
