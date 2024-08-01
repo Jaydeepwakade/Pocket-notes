@@ -1,0 +1,94 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  background-color: var(--white-color);
+  font-weight: 500;
+  overflow-y: auto;
+}
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+.sidebarHeading {
+  width: 100%;
+  color: var(--black-color);
+  font-size: 1.5rem;
+  padding: 1rem 0 1rem 1.4rem;
+  position: sticky;
+  top: 0;
+  background: white;
+}
+.sidebarTitle {
+  margin: 0.8rem 0 2rem 0rem;
+}
+.createNotes {
+  width: 3rem;
+  height: 3rem;
+  font-size: 2.4rem;
+  background-color: var(--btn-color);
+  color: var(--white-color);
+  position: absolute;
+  right: 0;
+  margin-right: 1.5rem;
+  border: none;
+  cursor: pointer;
+  bottom: 0;
+  margin-bottom: 2rem;
+}
+.sidebarNotesList {
+  padding: 1rem 0 1rem 1.5rem;
+  width: 100%;
+  position: relative;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.notesList {
+  width: 100%;
+  overflow-y: auto !important;
+}
+.notesList::-webkit-scrollbar {
+  display: none;
+}
+.noteElement {
+  margin-bottom: 1rem;
+  width: 100%;
+  cursor: pointer;
+}
+.listIcon {
+  color: var(--white-color);
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.2rem;
+}
+.selectedNote {
+  background-color: var(--notes-select-color);
+  padding: 0.5rem;
+  border-end-start-radius: 1.5rem;
+  border-start-start-radius: 1.5rem;
+}
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    text-align: center;
+  }
+  .sidebarHeading {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .sidebarNotesList {
+    padding: 1rem;
+  }
+  .selectedNote {
+    border-end-start-radius: 0rem;
+    border-start-start-radius: 0rem;
+    border-radius: 1rem;
+  }
+}

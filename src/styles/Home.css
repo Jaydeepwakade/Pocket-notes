@@ -1,0 +1,50 @@
+.home {
+  width: 70%;
+  position: fixed;
+  right: 0;
+}
+.homeTitle {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.homeDescription {
+  width: 50%;
+  line-height: 1.5rem;
+}
+
+.homeBottom {
+  position: fixed;
+  bottom: 1rem;
+  left: 55%;
+}
+.none {
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .home {
+    width: 93%;
+    position: fixed;
+    right: auto;
+  }
+  .homeImg {
+    width: 280px !important;
+  }
+  .homeTitle {
+    font-size: 1.5rem;
+  }
+  .homeDescription {
+    width: 100%;
+    line-height: 1.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  .homeBottom {
+    position: fixed;
+    bottom: 1rem;
+    left: 28%;
+  }
+  .none {
+    display: none !important;
+  }
+}

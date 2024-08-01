@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  /* Color Options */
+  --notes-color-1: #b38bfa;
+  --notes-color-2: #ff79f2;
+  --notes-color-3: #43e6fc;
+  --notes-color-4: #f19576;
+  --notes-color-5: #0047ff;
+  --notes-color-6: #6691ff;
+  /* Common Colors */
+  --black-color: #000000;
+  --white-color: #ffffff;
+  --send-btn-color: #5c5c5c;
+  --home-back-color: #dae5f5;
+  --notes-select-color: #2F2F2F2B; 
+  --btn-color: #001F8B
+}
+
+body {
+  background-color: var(--home-back-color);
+  overflow: hidden;
+}
+
+/* For Create Group and Color Options */
+.ellipse {
+  border-radius: 50%;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-row {
+  flex-direction: row !important;
+}
+
+.justify-start {
+  justify-content: flex-start !important;
+}

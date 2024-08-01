@@ -1,0 +1,75 @@
+.noteContainer {
+  width: 80%;
+  margin-left: 24rem;
+  height: 80vh;
+  overflow-y: scroll;
+  max-height: 62%;
+  position: relative;
+  bottom: 9%;
+}
+.noteBody {
+  padding: 1rem;
+  width: 90%;
+  margin-left: 5rem;  
+}
+
+.notesBox {
+width: 100%;
+height: 180px;
+background-color: var(--white-color);
+position:relative;  
+padding: 10px;
+border-radius: 5px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.descriptionContainer {
+  overflow-y: auto;
+  max-height: calc(100% - 20px);
+}
+
+.descriptionContainer::-webkit-scrollbar{
+  display: none;
+}
+
+.description {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.04em;
+}
+
+.timeStampContainer {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: #666;
+}
+
+.displayTxt{
+  padding-top: 1rem;
+  letter-spacing: 0.03em;
+}
+
+.noteContainer::-webkit-scrollbar {
+  width: 0.6rem;
+  height: 1rem;
+  border-radius: 1rem;
+}
+
+/* media queries */
+
+@media screen and (max-width: 768px) {
+  .noteContainer {
+    width: 100%;
+    margin-left: 0;
+    height: 59%;
+    position: relative;
+    bottom: 7%;
+  }
+  .noteBody {
+    padding: 0.5rem;
+  width: 100%;
+  margin-left: 0;  
+  }
+}

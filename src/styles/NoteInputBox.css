@@ -1,0 +1,43 @@
+.inputContainer {
+  background-color: var(--white-color);
+  width: 70%;
+  position: fixed;
+  right: 0;
+  bottom: 0.1rem;
+}
+.inputBoxContainer {
+  border-bottom-left-radius: 0.5rem;
+  background-color: var(--btn-color);
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+.inputBox {
+  background-color: var(--white-color);
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+}
+.inputBox::placeholder {
+  font-size: 1rem;
+  color: #9a9a9a;
+}
+.inputBox:focus {
+  outline: none;
+}
+.sendBtn {
+  position: relative;
+  right: 3.2rem;
+  top: 2rem;
+  cursor: pointer;
+  border: none;
+  background-color: var(--white-color)
+}
+@media screen and (max-width: 768px) {
+  .inputContainer {
+    width: 100%;
+    bottom: -1rem;
+  }
+}
