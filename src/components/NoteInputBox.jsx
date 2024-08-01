@@ -27,7 +27,7 @@ const NoteInputBox = ({ id, handleNewNote }) => {
     };
 
     try {
-      const response = await fetch(`http://localhost:5000/note-groups/${id}/notes`, {
+      const response = await fetch(`https://pocketenotes-server.onrender.com/note-groups/${id}/notes`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

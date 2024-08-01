@@ -18,7 +18,7 @@ const Sidebar = ({
   const fetchNoteGroups = async () => {
     // setLoading(true); // Show loader
     try {
-      const response = await fetch("http://localhost:5000/note-groups");
+      const response = await fetch("https://pocketenotes-server.onrender.com/note-groups");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -36,9 +36,8 @@ const Sidebar = ({
   useEffect(() => {
     fetchNoteGroups();
 
-    const intervalId = setInterval(fetchNoteGroups, 5000); // Poll every 30 seconds
-
-    return () => clearInterval(intervalId); // Clean up polling on unmount
+    const intervalId = setInterval(fetchNoteGroups, 5000); 
+    return () => clearInterval(intervalId); 
   }, [NoteActive]);
 
   const handleSelect = (note) => {
@@ -59,9 +58,9 @@ const Sidebar = ({
       </div>
       <div className="sidebarNotesList">
         {loading ? (
-          <Loader /> // Show loader while fetching
+          <Loader /> 
         ) : error ? (
-          <p>Error loading note groups: {error}</p> // Show error message if any
+          <p>Error loading note groups: {error}</p> 
         ) : noteGroups.length > 0 ? (
           <div className="notesList">
             {noteGroups.map((note, index) => {

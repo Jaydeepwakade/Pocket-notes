@@ -7,7 +7,7 @@ const Home = ({noteActive,isPhone}) => {
   useEffect(()=>{
     const fetchNoteGroup = async ()=>{
       try {
-         const data = await fetch("http://localhost:5000/note-groups")
+         const data = await fetch("https://pocketenotes-server.onrender.com/note-groups")
          const response =  await data.json()
          setNoteGroups(response)
          console.log(noteGroups)

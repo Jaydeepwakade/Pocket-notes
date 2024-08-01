@@ -21,16 +21,15 @@ function App() {
   useEffect(() => {
     const fetchNoteGroups = async () => {
       try {
-        const response = await fetch("http://localhost:5000/note-groups");
+        const response = await fetch("https://pocketenotes-server.onrender.com/note-groups");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        setNoteGroups(data); // Set the fetched note groups
-        // console.log("from App",data)
-        // Extract and set the ID from the fetched data if necessary
+        setNoteGroups(data); 
+      
         if (data.length > 0) {
-          // Assuming you want the ID of the first note group, adjust as needed
+         
           setSelectedNoteId(data[0].id);
         }
       } catch (error) {
@@ -38,7 +37,7 @@ function App() {
       }
     };
 
-    fetchNoteGroups(); // Fetch data on component mount
+    fetchNoteGroups(); 
   }, []);
 
   // useEffect(() => {

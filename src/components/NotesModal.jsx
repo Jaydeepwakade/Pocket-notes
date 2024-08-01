@@ -53,7 +53,7 @@ const NotesModal = ({
     };
     try {
       setLoading(true); // Set loading to true when starting the request
-      const response = await fetch("http://localhost:5000/note-groups", {
+      const response = await fetch("https://pocketenotes-server.onrender.com/note-groups", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

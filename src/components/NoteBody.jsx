@@ -5,13 +5,13 @@ import NoteInputBox from "./NoteInputBox";
 
 const NoteBody = ({ name, color, id, isPhone, display, setDisplay }) => {
   const [notes, setNotes] = useState([]);
-  const [groupId, setGroupId] = useState(id); // Initialize groupId with the prop id
+  const [groupId, setGroupId] = useState(id);
 
   const fetchNotes = async (id) => {
     // setGroupId(id)
     console.log("Calling this",id);
     try {
-      const response = await fetch(`http://localhost:5000/note-groups/${id}`, {
+      const response = await fetch(`https://pocketenotes-server.onrender.com/note-groups/${id}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
